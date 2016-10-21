@@ -17,7 +17,7 @@ table.columns = {
  */
 
 table.read.access = 'anonymous';
-table.update.access = 'disabled';
+table.insert.access = 'disabled';
 
 
 module.exports = table;

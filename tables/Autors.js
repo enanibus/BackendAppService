@@ -12,8 +12,16 @@ table.columns = {
 };
 
 /*
-    Permisos de acceso a la tabla
+    Trigger para insert
+ */
 
+table.insert(function (context) {
+   context.item.idUsuario = context.user.id;
+   return context.execute();
+});
+
+/*
+    Permisos de acceso a la tabla
  */
 
 table.read.access = 'anonymous';

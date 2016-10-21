@@ -20,6 +20,11 @@ table.insert(function (context) {
    return context.execute();
 });
 
+table.read(function (context) {
+   context.query.where({usuario : contex.user.id});
+   return context.execute();
+});
+
 /*
     Permisos de acceso a la tabla
  */

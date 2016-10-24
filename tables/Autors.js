@@ -11,7 +11,7 @@ table.columns = {
     "secondName" : "string"
 };
 
-table.dynamicSchema = true;
+// table.dynamicSchema = false;
 
 /*
     Trigger para insert

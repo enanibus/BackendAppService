@@ -14,8 +14,8 @@ var api =  {
         // console.log(context)
         // var user = context.user.id;
 
-        let titulo = req.parameters.titulo
-        let texto = req.parameters.texto
+        let titulo = req.body.titulo
+        let texto = req.body.texto
         // let foto = req.parameters.foto
         // let latitud = req.parameters.latitud
         // let longitud = req.parameters.longitud

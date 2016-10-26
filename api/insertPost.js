@@ -29,14 +29,15 @@ var api =  {
         //     sql : "INSERT INTO Posts VALUES("titulo", "texto", "foto", "latitud", "longitud", "autor", "publicado", "valoracion", "paraPublicar", "container")"
         // };
 
-        var query =  {
-            sql : "INSERT INTO Posts VALUES("titulo", "texto")"
+        var query = {
+            sql: "INSERT INTO Posts VALUES ('titulo', 'texto')"
         };
+        res.json(req.body)
 
-        req.azureMobile.data.execute(query)
-            .then(function (result) {
-                res.json(result);
-            });
+        // req.azureMobile.data.execute(query)
+        //     .then(function (result) {
+        //         res.json(result);
+        //     });
     }
 };
 

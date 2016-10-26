@@ -39,7 +39,7 @@ table.columns = {
  Permisos de acceso a la tabla
  */
 
-// voy a ver el enuncaido
+// table.read.access = 'anonymous';
 // table.update.access = 'authenticated';
 // table.delete.access = 'authenticated';
 // table.insert.access = 'authenticated';

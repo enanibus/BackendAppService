@@ -4,7 +4,7 @@
 
 var azureMobileApps = require('azure-mobile-apps');
 
-var table = azureMobileApps.table();
+var table = azureMobileApps.table(); 
 
 table.columns = {
     "titulo" : "string",

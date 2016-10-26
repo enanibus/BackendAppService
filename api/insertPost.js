@@ -14,19 +14,23 @@ var api =  {
         // console.log(context)
         // var user = context.user.id;
 
-        let titulo = req.params.titulo
-        let texto = req.params.texto
-        let foto = req.params.foto
-        let latitud = req.params.latitud
-        let longitud = req.params.longitud
-        let autor = req.params.autor
-        let publicado = req.params.publicado
-        let valoracion = req.params.valoracion
-        let paraPublicar = req.params.paraPublicar
-        let container = req.params.container
+        let titulo = req.parameters.titulo
+        let texto = req.parameters.texto
+        // let foto = req.parameters.foto
+        // let latitud = req.parameters.latitud
+        // let longitud = req.parameters.longitud
+        // let autor = req.parameters.autor
+        // let publicado = req.parameters.publicado
+        // let valoracion = req.parameters.valoracion
+        // let paraPublicar = req.parameters.paraPublicar
+        // let container = req.parameters.container
+
+        // var query =  {
+        //     sql : "INSERT INTO Posts VALUES("titulo", "texto", "foto", "latitud", "longitud", "autor", "publicado", "valoracion", "paraPublicar", "container")"
+        // };
 
         var query =  {
-            sql : "INSERT INTO Posts VALUES("titulo", "texto", "foto", "latitud", "longitud", "autor", "publicado", "valoracion", "paraPublicar", "container")"
+            sql : "INSERT INTO Posts VALUES("titulo", "texto")"
         };
 
         req.azureMobile.data.execute(query)

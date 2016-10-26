@@ -7,16 +7,16 @@ var azureMobileApps = require('azure-mobile-apps');
 var table = azureMobileApps.table();
 
 table.columns = {
-    "titulo" : "string",
-    "texto" : "string",
-    "foto" : "string",
-    "latitud" : "double",
-    "longitud" : "double",
-    "autor" : "string",
-    "estado" : "bool",
-    "valoracion" : "double",
-    "disponible" : "bool",
-    "container" : "string"
+    "titulo" : "String",
+    "texto" : "String",
+    "foto" : "String",
+    "latitud" : "Double",
+    "longitud" : "Double",
+    "autor" : "String",
+    "publicado" : "Boolean",
+    "valoracion" : "Double",
+    "paraPublicar" : "Boolean",
+    "container" : "String"
 };
 
 // table.dynamicSchema = false;
@@ -39,7 +39,7 @@ table.columns = {
  Permisos de acceso a la tabla
  */
 
-// table.read.access = 'anonymous';
+// voy a ver el enuncaido
 // table.update.access = 'authenticated';
 // table.delete.access = 'authenticated';
 // table.insert.access = 'authenticated';

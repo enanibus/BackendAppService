@@ -33,6 +33,7 @@ var api =  {
             sql: "INSERT INTO Posts VALUES ('titulo', 'texto')"
         };
         res.json(req.body)
+        
 
         // req.azureMobile.data.execute(query)
         //     .then(function (result) {

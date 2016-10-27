@@ -54,7 +54,33 @@ table.insert(function (context) {
     //     error = true;
     // }
 
+    //return context.execute();
+
+    if (!error){
+        //context.item.idUsuario = context.user.id;
+        console.log("Insertando post de usuario: " + context.user.id);
+        context.user.getIdentities({
+            success: function (identities) {
+                var http = require('request');
+                console.log('Identities: ', identities);
+                var url = 'https://graph.facebook.com/me?fields=id,name,birthday,hometown,email,picture,gender,friends&access_token=' +
+                        identities.facebook.accessToken;
+
+                var reqParams = { uri: url, headers: { Accept: 'application/json' } };
+                http.get(reqParams, function (err, resp, body) {
+                    var userData = JSON.parse(body);
+                    console.log('Logado -> ' + userData.name);
+                    context.item.id = userData.id;
+                    context.item.autor = userData.name
+                    context.req.execute();
+                });
+            }
+        });
+    }
+
     return context.execute();
+
+
 });
 
 

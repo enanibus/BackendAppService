@@ -11,7 +11,6 @@ var api =  {
         }
 
         var context = req.azureMobile;
-        console.log(context)
         var user = context.user.id;
 
         var query =  {

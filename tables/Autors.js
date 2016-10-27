@@ -21,7 +21,7 @@ table.columns = {
 //    context.item.idUsuario = context.user.id;
 //    return context.execute();
 // });
-//
+
 // table.read(function (context) {
 //    context.query.where({usuario : context.user.id});
 //    return context.execute();

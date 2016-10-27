@@ -2,18 +2,18 @@
  * Created by jacobo on 27/10/16.
  */
 
-function insert(item, context, request) {
+function insert(item, user, request) {
     console.log("Saving new News");
     // Setting default values
-    item.valoracion = 0
-    item.numOfVals = 0
+    item.score = 0
+    item.total_likes = 0
     var error = false
     if(item.titulo === ""){
-        request.respond(statusCodes.badRequest, 'Text must be required');
+        request.respond(statusCodes.BAD_REQUEST, 'Text must be required');
         error = true;
     }
     if(item.texto.length < 10){
-        request.respond(statusCodes.badRequest,
+        request.respond(statusCodes.BAD_REQUEST,
             'Body length must be more than 10 characters');
         error = true;
     }
@@ -21,9 +21,9 @@ function insert(item, context, request) {
     //     request.respond(statusCodes.BAD_REQUEST, 'Photo must be required');
     //     error = true;
     // }
-
+    
     if (!error){
-        context.user.getIdentities({
+        user.getIdentities({
             success: function (identities) {
                 var http = require('request');
                 console.log('Identities: ', identities);
@@ -34,8 +34,8 @@ function insert(item, context, request) {
                 http.get(reqParams, function (err, resp, body) {
                     var userData = JSON.parse(body);
                     console.log('Logado -> ' + userData.name);
-                    item.id = userData.id;
-                    item.autor = userData.name
+                    item.author = userData.id;
+                    item.authorName = userData.name
                     request.execute();
                 });
             }

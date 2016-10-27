@@ -80,7 +80,7 @@ table.insert(function(item, context, request) {
         //     }
         // });
     }
-}
+})
 
 
 // table.read(function (context) {

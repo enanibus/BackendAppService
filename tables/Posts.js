@@ -8,7 +8,7 @@ var table = azureMobileApps.table();
 
 table.columns = {
     "titulo" : "string",
-    "texto" : "string"
+    "texto" : "string",
     "foto" : "string",
     "latitud" : "number",
     "longitud" : "number",

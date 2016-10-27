@@ -32,24 +32,24 @@ table.columns = {
 // });
 
 
-table.insert(function(item, context, request) {
+table.insert(function(context, request) {
     console.log("Saving new News");
     console.log(item.description);
     // Setting default values
-    item.longitud = 0
-    item.latitud = 0
-    item.publicado = false
-    item.valoracion = 0
-    item.numOfVals = 0
-    item.paraPublicar = true
-    item.container = ""
+    context.item.longitud = 0
+    context.item.latitud = 0
+    context.item.publicado = false
+    context.item.valoracion = 0
+    context.item.numOfVals = 0
+    context.item.paraPublicar = true
+    context.item.container = ""
 
     var error = false
-    if(item.titulo === ""){
+    if(context.item.titulo === ""){
         request.respond(statusCodes.badRequest, 'Text must be required');
         error = true;
     }
-    if(item.texto.length < 10){
+    if(context.item.texto.length < 10){
         request.respond(statusCodes.badRequest,
             'Body length must be more than 10 characters');
         error = true;

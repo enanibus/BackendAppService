@@ -28,13 +28,37 @@ table.columns = {
 
 table.insert(function (context) {
     context.item.idUsuario = context.user.id;
-    //     // Setting default values
     context.item.longitud = 0
     context.item.latitud = 0
     context.item.publicado = false
     context.item.valoracion = 0
     context.item.numOfVals = 0
     context.item.paraPublicar = true
+
+    var error = false
+
+    if(context.item.titulo === ""){
+        request.respond(statusCodes.badRequest, 'Text must be required');
+        error = true;
+    }
+
+    if(context.item.texto.length < 10){
+        request.respond(statusCodes.badRequest,
+            'Body length must be more than 10 characters');
+        error = true;
+    }
+    
+    // if(item.foto === ""){
+    //     request.respond(statusCodes.BAD_REQUEST, 'Photo must be required');
+    //     error = true;
+    // }
+
+}
+
+
+
+
+
     return context.execute();
 });
 

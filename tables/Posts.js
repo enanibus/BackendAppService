@@ -9,15 +9,15 @@ var table = azureMobileApps.table();
 table.columns = {
     "titulo" : "string",
     "texto" : "string"
-    // "foto" : "string",
-    // "latitud" : "number",
-    // "longitud" : "number",
-    // "autor" : "string",
-    // "publicado" : "boolean",
-    // "valoracion" : "number",
-    // "numOfVals" : "number",
-    // "paraPublicar" : "boolean",
-    // "container" : "string"
+    "foto" : "string",
+    "latitud" : "number",
+    "longitud" : "number",
+    "autor" : "string",
+    "publicado" : "boolean",
+    "valoracion" : "number",
+    "numOfVals" : "number",
+    "paraPublicar" : "boolean",
+    "container" : "string"
 };
 
 // table.dynamicSchema = false;

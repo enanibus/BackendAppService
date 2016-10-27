@@ -38,15 +38,15 @@ table.insert(function (context) {
     var error = false
 
     if(context.item.titulo === ""){
-        context.res.status(500).json({status: "Text must be required"})
+        context.res.status(500).json({status: "Title must be required"})
         error = true;
     }
-    
-    //
-    // if(context.item.texto.length < 10){
-    //     context.res.json(500)
-    //     error = true;
-    // }
+
+
+    if(context.item.texto.length < 10){
+        context.res.status(500).json({status: "Text must be of 10 length at least"})
+        error = true;
+    }
 
     // if(item.foto === ""){
     //     request.respond(statusCodes.BAD_REQUEST, 'Photo must be required');

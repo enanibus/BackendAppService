@@ -49,7 +49,7 @@ table.insert(function (context) {
         error = true;
     }
 
-    if(context.item.autor === ""){
+    if(!context.item.autor){
         context.res.status(500).json({status: "Author is required"})
         error = true;
     }

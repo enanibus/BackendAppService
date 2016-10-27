@@ -32,7 +32,7 @@ table.columns = {
 // });
 
 
-table.insert(item, context, request) {
+table.insert(function(item, context, request) {
     console.log("Saving new News");
     // Setting default values
     item.longitud = 0

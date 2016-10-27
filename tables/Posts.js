@@ -52,12 +52,6 @@ table.insert(function (context) {
     //     error = true;
     // }
 
-}
-
-
-
-
-
     return context.execute();
 });
 

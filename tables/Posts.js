@@ -57,32 +57,18 @@ table.insert(function (context) {
     //return context.execute();
 
     if (!error) {
-        //context.item.idUsuario = context.user.id;
+        context.item.idUsuario = context.user.id;
         console.log("Insertando post de usuario: " + context.user.id);
-        context.user.getIdentity().then((data) => { context.item.autor = data.microsoftaccount.claims.emailaddress };
-            // success: function (identities) {
-            //     var http = require('request');
-            //     console.log('Identities: ', identities);
-            //     var url = 'https://graph.facebook.com/me?fields=id,name,birthday,hometown,email,picture,gender,friends&access_token=' +
-            //             identities.facebook.accessToken;
-            //
-            //     var reqParams = { uri: url, headers: { Accept: 'application/json' } };
-            //     http.get(reqParams, function (err, resp, body) {
-            //         var userData = JSON.parse(body);
-            //         console.log('Logado -> ' + userData.name);
-            //         context.item.id = userData.id;
-            //         context.item.autor = userData.name
-            //         context.req.execute();
-            //     });
-            // }
-            return context.execute();
-        );
+        var currentUser = req.azureMobile.user;
+        currentUser.getIdentity("facebook").then(data) => {
 
+            context.item.autor = data["name"]
 
+        }
+        return context.execute();
     }
 
 });
-
 
 // table.insert(function(context, request) {
 //     console.log("Saving new News");

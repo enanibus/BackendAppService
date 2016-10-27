@@ -23,7 +23,7 @@ table.columns = {
 // });
 //
 // table.read(function (context) {
-//    context.query.where({usuario : contex.user.id});
+//    context.query.where({usuario : context.user.id});
 //    return context.execute();
 // });
 

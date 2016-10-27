@@ -35,12 +35,13 @@ table.insert(function (context) {
     context.item.numOfVals = 0
     context.item.paraPublicar = true
 
-    // var error = false
-    //
-    // if(context.item.titulo === ""){
-    //     context.res.json(500)
-    //     error = true;
-    // }
+    var error = false
+
+    if(context.item.titulo === ""){
+        context.res.status(500).json({status: "Text must be required"})
+        error = true;
+    }
+    
     //
     // if(context.item.texto.length < 10){
     //     context.res.json(500)

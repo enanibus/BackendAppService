@@ -44,7 +44,7 @@ table.insert(function (context) {
     }
 
 
-    if(!context.item.texto || context.item.texto.length < 10){
+    if(!context.item.texto || (context.item.texto.length < 10)){
         context.res.status(500).json({status: "Text must be of 10 length at least"})
         error = true;
     }
@@ -54,7 +54,7 @@ table.insert(function (context) {
         error = true;
     }
 
-    // if(item.foto === ""){
+    // if(!item.foto){
     //     request.respond(statusCodes.BAD_REQUEST, 'Photo is required');
     //     error = true;
     // }

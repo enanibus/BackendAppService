@@ -34,6 +34,7 @@ table.columns = {
 
 table.insert(function(item, context, request) {
     console.log("Saving new News");
+    console.log(item.description);
     // Setting default values
     item.longitud = 0
     item.latitud = 0

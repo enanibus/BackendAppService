@@ -28,12 +28,13 @@ table.columns = {
 
 table.insert(function (context) {
     context.item.idUsuario = context.user.id;
-    context.item.longitud = 0
-    context.item.latitud = 0
-    context.item.publicado = false
-    context.item.valoracion = 0
-    context.item.numOfVals = 0
-    context.item.paraPublicar = true
+    context.item.longitud = 0;
+    context.item.latitud = 0;
+    context.item.publicado = false;
+    context.item.valoracion = 0;
+    context.item.numOfVals = 0;
+    context.item.paraPublicar = true;
+    context.item.autor = context.user.name;
 
     var error = false
 

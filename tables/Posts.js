@@ -9,7 +9,7 @@ var table = azureMobileApps.table();
 table.columns = {
     "titulo" : "string",
     "texto" : "string",
-    "foto" : "string"
+    "foto" : "string",
     "latitud" : "number",
     "longitud" : "number",
     "autor" : "string",
@@ -29,12 +29,12 @@ table.columns = {
 table.insert(function (context) {
     context.item.idUsuario = context.user.id;
     //     // Setting default values
-    // context.item.longitud = 0
-    // context.item.latitud = 0
-    // context.item.publicado = false
-    // context.item.valoracion = 0
-    // context.item.numOfVals = 0
-    // context.item.paraPublicar = true
+    context.item.longitud = 0
+    context.item.latitud = 0
+    context.item.publicado = false
+    context.item.valoracion = 0
+    context.item.numOfVals = 0
+    context.item.paraPublicar = true
     return context.execute();
 });
 

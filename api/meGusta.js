@@ -10,9 +10,9 @@ var api = {
             console.log("error")
         }
         console.log(req.query["id"]);
-        var nuevaValoracion = req.query["valoracion"];
+        var nuevaValoracion = parseInt(req.query["valoracion"]);
         var querySelect = {
-            sql: "Select valoracion,numOfVals FROM Posts WHERE id = '" + req.query["postId"] + "'"
+            sql: "Select valoracion,numOfVals FROM Posts WHERE id = '" + req.query["id"] + "'"
         };
 
         req.azureMobile.data.execute(querySelect)
@@ -28,7 +28,7 @@ var api = {
                         numOfVals++;
                     }
                     var queryUpdate = {
-                        sql: "UPDATE news SET ratingscount='" + numOfVals + "', rating='" + valoracionActual + "' WHERE id = '" + req.query["id"] + "'"
+                        sql: "UPDATE Posts SET numOfVals='" + numOfVals + "', valoracion='" + valoracionActual + "' WHERE id = '" + req.query["id"] + "'"
                     };
                     req.azureMobile.data.execute(queryUpdate)
                         .then(function (result) {

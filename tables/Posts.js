@@ -66,7 +66,6 @@ table.read(function (context) {
         return context.execute();
     }
     else {
-        console.log(context.user.id);
         context.query.where({idUsuario: context.user.id});
         return context.execute();
     }

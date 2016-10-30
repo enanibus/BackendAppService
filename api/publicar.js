@@ -10,7 +10,7 @@ var api = {
         }
 
         var querySelect = {
-            sql: "Select * FROM Posts WHERE paraPublicar = '" 1 "'"
+            sql: "Select publicado,paraPublicar FROM Posts WHERE paraPublicar = '" 1 "'"
         };
 
         req.azureMobile.data.execute(querySelect)

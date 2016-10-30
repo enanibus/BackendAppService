@@ -62,11 +62,11 @@ table.insert(function (context) {
 
 table.read(function (context) {
     console.log("************************");
-    console.log(context.user.id);
     if (!context.user.id) {
         return context.execute();
     }
     else {
+        console.log(context.user.id);
         context.query.where({idUsuario: context.user.id});
         return context.execute();
     }

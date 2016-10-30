@@ -8,10 +8,10 @@ var api = {
         if (typeof  req.params.length < 0) {
             console.log("error")
         }
-
-        // var querySelect = {
-        //     sql: "Select publicado,paraPublicar FROM Posts WHERE paraPublicar = '" 1 "'"
-        // };
+        // sql: "Select * FROM Posts WHERE paraPublicar = '" 1 "'"
+        var querySelect = {
+            sql: "Select * FROM Posts"
+        };
 
         req.azureMobile.data.execute(querySelect)
             .then(function (result) {

@@ -16,7 +16,8 @@ var api = {
         req.azureMobile.data.execute(querySelect)
             .then(function (result) {
                     var queryUpdate = {
-                        sql: "UPDATE Posts SET paraPublicar='" + false + "', publicado='" + true + "' WHERE paraPublicar = '" + true + "'"
+                        // sql: "UPDATE Posts SET paraPublicar='" + false + "', publicado='" + true + "' WHERE paraPublicar = '" + true + "'"
+                        sql: "UPDATE Posts SET paraPublicar=false, publicado=true WHERE paraPublicar = true"
                     };
                     req.azureMobile.data.execute(queryUpdate)
                         .then(function (result) {

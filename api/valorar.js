@@ -5,11 +5,11 @@
 var api = {
     put: function (req, res, next) {
         var date = {currentTime: Date.now()};
-        console.log("recibida nueva valoracion "+req.query["valoracion"]);
+
         if (typeof  req.params.length < 0) {
             console.log("error")
         }
-        console.log(req.query["id"]);
+
         var nuevaValoracion = parseInt(req.query["valoracion"]);
         var querySelect = {
             sql: "Select valoracion,numOfVals FROM Posts WHERE id = '" + req.query["id"] + "'"
@@ -32,7 +32,7 @@ var api = {
                     };
                     req.azureMobile.data.execute(queryUpdate)
                         .then(function (result) {
-                            res.json("OK!")
+                            res.json("OK")
                         });
                 }
             );
@@ -40,4 +40,5 @@ var api = {
 };
 
 api.put.access = 'anonymous';
+
 module.exports = api;

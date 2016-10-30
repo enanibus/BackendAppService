@@ -20,7 +20,7 @@ table.columns = {
     "container" : "string"
 };
 
-// table.dynamicSchema = false;
+table.dynamicSchema = false;
 
 /*
  Trigger para insert
@@ -54,31 +54,19 @@ table.insert(function (context) {
         error = true;
     }
 
-    // if(!item.foto){
-    //     request.respond(statusCodes.BAD_REQUEST, 'Photo is required');
-    //     error = true;
-    // }
-
-    //return context.execute();
-
     if (!error) {
         return context.execute();
     }
 
 });
 
-// table.read(function (context) {
-//     context.query.where({usuario : context.user.id});
-//     return context.execute();
-// });
-
 /*
  Permisos de acceso a la tabla
  */
 
 table.read.access = 'anonymous';
-table.update.access = 'anonymous';
-table.delete.access = 'anonymous';
-table.insert.access = 'anonymous';
+table.insert.access = 'authenticated';
+table.update.access = 'authenticated';
+// table.delete.access = 'anonymous';
 
 module.exports = table;

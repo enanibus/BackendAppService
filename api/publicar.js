@@ -24,6 +24,7 @@ var api = {
                                 {name: 'pendiente' , value : true}
                             ]
                     };
+                    console.log("Ejecutando UPDATE de JOB de Publicación")
                     req.azureMobile.data.execute(queryUpdate)
                         .then(function (result) {
                             res.json("-----------Ejecutado JOB de Publicación------------")

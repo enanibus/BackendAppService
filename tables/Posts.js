@@ -61,7 +61,8 @@ table.insert(function (context) {
 });
 
 table.read(function (context) {
-    console.log(context.user.id)
+    console.log("************************");
+    console.log(context.user.id);
     if (!context.user.id) {
         return context.execute();
     }

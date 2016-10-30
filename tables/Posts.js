@@ -60,17 +60,6 @@ table.insert(function (context) {
 
 });
 
-table.read(function (context) {
-    console.log("************************");
-    if (context.user == 'undefined') {
-        return context.execute();
-    }
-    else {
-        context.query.where({idUsuario: context.user.id});
-        return context.execute();
-    }
-});
-
 /*
  Permisos de acceso a la tabla
  */

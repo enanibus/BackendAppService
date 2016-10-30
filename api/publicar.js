@@ -2,12 +2,12 @@
  * Created by jacobo on 30/10/16.
  */
 
-var api = {
-    put: function (req, res, next) {
-
-        if (typeof  req.params.length < 0) {
-            console.log("error")
-        }
+// var api = {
+//     put: function (req, res, next) {
+//
+//         if (typeof  req.params.length < 0) {
+//             console.log("error")
+//         }
         // sql: "Select * FROM Posts WHERE paraPublicar = '" 1 "'"
         // var querySelect = {
         //     sql: "Select * FROM Posts"
@@ -31,9 +31,9 @@ var api = {
                         });
             //     }
             // );
-    }
-};
+//     }
+// };
 
-api.put.access = 'authenticated';
-
-module.exports = api;
+// api.put.access = 'authenticated';
+//
+// module.exports = api;

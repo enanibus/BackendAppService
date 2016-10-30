@@ -17,12 +17,12 @@ var api = {
             .then(function (result) {
                     var queryUpdate = {
                         // sql: "UPDATE Posts SET paraPublicar=" + false + ", publicado=" + true + " WHERE paraPublicar = " + true + ""
-                        sql: 'UPDATE Posts SET paraPublicar=@pendientes, publicado=@publica WHERE paraPublicar=@pendientePublicar',
-                        parameters: [{
-                            pendientes: false,
-                            publica: true,
-                            pendientePublicar: true
-                        }]
+                        sql: 'UPDATE Posts SET paraPublicar=@pendientes, publicado=@publica WHERE paraPublicar=@pendiente',
+                            parameters: [
+                                {name: 'pendientes' , value : false},
+                                {name: 'publica' , value : true},
+                                {name: 'pendiente' , value : true}
+                            ]
                     };
                     req.azureMobile.data.execute(queryUpdate)
                         .then(function (result) {

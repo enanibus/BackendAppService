@@ -4,7 +4,6 @@
 
 var api = {
     put: function (req, res, next) {
-        var date = {currentTime: Date.now()};
 
         if (typeof  req.params.length < 0) {
             console.log("error")

@@ -9,12 +9,12 @@ var api = {
             console.log("error")
         }
         // sql: "Select * FROM Posts WHERE paraPublicar = '" 1 "'"
-        var querySelect = {
-            sql: "Select * FROM Posts"
-        };
+        // var querySelect = {
+        //     sql: "Select * FROM Posts"
+        // };
 
-        req.azureMobile.data.execute(querySelect)
-            .then(function (result) {
+        // req.azureMobile.data.execute(querySelect)
+        //     .then(function (result) {
                     var queryUpdate = {
                         // sql: "UPDATE Posts SET paraPublicar=" + false + ", publicado=" + true + " WHERE paraPublicar = " + true + ""
                         sql: 'UPDATE Posts SET paraPublicar=@pendientes, publicado=@publica WHERE paraPublicar=@pendiente',
@@ -28,8 +28,8 @@ var api = {
                         .then(function (result) {
                             res.json("-----------Ejecutado JOB de Publicación------------")
                         });
-                }
-            );
+            //     }
+            // );
     }
 };
 

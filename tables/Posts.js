@@ -62,7 +62,7 @@ table.insert(function (context) {
 
 table.read(function (context) {
     console.log("************************");
-    if (!context.user.id) {
+    if (context.user.id === 'undefined') {
         return context.execute();
     }
     else {

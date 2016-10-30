@@ -33,7 +33,7 @@ table.insert(function (context) {
     context.item.publicado = false;
     context.item.valoracion = 0;
     context.item.numOfVals = 0;
-    context.item.paraPublicar = true;
+    context.item.paraPublicar = false;
     context.item.container = "";
 
     var error = false

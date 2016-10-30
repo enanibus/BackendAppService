@@ -2,6 +2,8 @@
  * Created by jacobo on 30/10/16.
  */
 
+var azureMobile = require('azure-mobile-apps');
+
 // var api = {
 //     put: function (req, res, next) {
 //
@@ -25,7 +27,7 @@
                             ]
                     };
                     console.log("Ejecutando UPDATE de JOB de Publicación")
-                    req.azureMobile.data.execute(queryUpdate)
+                    azureMobile.data.execute(queryUpdate)
                         .then(function (result) {
                             res.json("-----------Ejecutado JOB de Publicación------------")
                         });

@@ -61,10 +61,15 @@ table.insert(function (context) {
 });
 
 table.read(function (context) {
-    if (context.user.id) {
-        context.query.where({idUsuario: context.user.id});
+    console.log(context.user.id))
+    if (!context.user.id) {
+        return context.execute();
     }
-    return context.execute();
+    else {
+        context.query.where({idUsuario: context.user.id});
+        return context.execute();
+    }
+
 });
 
 /*

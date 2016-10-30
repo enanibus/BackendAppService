@@ -33,6 +33,6 @@ var api = {
     }
 };
 
-api.put.access = 'anonymous';
+api.put.access = 'authenticated';
 
 module.exports = api;
